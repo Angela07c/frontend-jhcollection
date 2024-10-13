@@ -309,6 +309,7 @@ i.fa-sharp.fa-solid.fa-plus {
 
 p {
     font-family: "Playfair Display", serif;
+    color: yellow;
 }
 
 @media ( max-width: 992px) {

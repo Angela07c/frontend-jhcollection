@@ -4,6 +4,13 @@
     <div class="field">
         <label for="name-product">Name product</label>
         <input type="text"  formControlName= "name" id="name-product">
+        <div class="error">
+            <div *ngIf="productForm.get ('name')?.invalid &&(productForm.get('name')?.dirty || productForm.get ('name')?.touched)">
+            <small *ngIf="productForm.get ('name')?.errors?.['required']">
+                El campo 'name' es obligatorio
+            </small>
+            </div>
+        </div>
     </div>
     <div class="field">
         <label for="">Description</label>
@@ -11,21 +18,55 @@
     </div>
     <div class="field">
         <label for="price">Price</label>
-        <input type="number" formControlName=" price" id="price">
+        <input type="number" min= "0" formControlName=" price" id="price">
+        <div class="error">
+            <div *ngIf="productForm.get ('price')?.invalid &&(productForm.get('price')?.dirty || productForm.get ('price')?.touched)">
+           
+                <small *ngIf="productForm.get ('price')?.errors?.['required']">
+                El valor no puede ser negativo
+             </small>
+             
+             <small *ngIf="productForm.get ('price')?.errors?.['min']">
+                El valor no puede ser negativo
+             </small>
+            </div>
+        </div>
     </div>
     <div class="field">
         <label for="quantity">Quantity</label>
-        <input type="number"formControlName= 'quantity' id="quantity">
+        <input type="number" formControlName= 'quantity' id="quantity">
+        <div class="error">
+            <div *ngIf="productForm.get ('quantity')?.invalid &&(productForm.get('quantity')?.dirty || productForm.get ('quantity')?.touched)">
+           
+                <small *ngIf="productForm.get ('quantity')?.errors?.['required']">
+                El valor no puede ser negativo
+             </small>
+             
+             <small *ngIf="productForm.get ('quantity')?.errors?.['min']">
+                El valor no puede ser menor a 0
+             </small>
+            </div>
+        </div>
+        
     </div>
     <div class="field">
         <label for="category">Category</label>
-        <select formControlName="Category" id="category">
+        <select formControlName="category" id="category">
             <option value="tecnology">Tecnology</option>
             <option value="Vegetables">Vegetables</option>
             <option value="fruits">Fruits</option>
             <option value="home">Home</option>
             <option value="pharmacy">Pharmacy</option>
         </select>
+        <div class="error">
+        <div *ngIf="productForm.get ('category')?.invalid &&(productForm.get('category')?.dirty || productForm.get ('category')?.touched)">
+           
+            <small *ngIf="productForm.get ('category')?.errors?.['required']">
+            El valor no puede ser negativo
+         </small>
+         
+        </div> 
+        </div>
     </div>
 
     <div class="field">
@@ -34,7 +75,7 @@
         
    </div>
    <div class="field">
-    <button type="submit">Send</button>
+    <button type="submit" [disabled]="productForm.invalid" >register </button>
    </div>
 </form>
 

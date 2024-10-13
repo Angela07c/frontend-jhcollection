@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},
+    {path: 'dashboard', component: DashboardComponent},
     {path:'product/form', component: ProductFormComponent},
     {path: 'product/list', component: ProductListComponent},
     {path: 'product/detail', component: ProductDetailComponent},

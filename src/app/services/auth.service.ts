@@ -15,20 +15,31 @@ export class AuthService {
   constructor( private http: HttpClient ) { }
 
   registerUser ( newUser: User ) :Observable <boolean|string>{
-    return this.http.post <Response>( 'http://localhost:3000/api/auth/register', newUser ) .pipe( 
-      
-      map ((data)=>{
-        return data.ok
-      }),
-      catchError ((error)=>{
-        // console.log(error);
-        return of ("error")
-      })
-
-
-    );
-
-
+    return this.http.post <Response>( 'http://localhost:3000/api/auth/register', newUser )
+      .pipe(     
+        map ((data)=>{
+          return data.ok
+        }),
+        catchError ((error)=>{
+          // console.log(error);
+          return of ("error")
+        })
+      );
+    }
+    
+  loginUser(credenciales: User) :Observable <boolean|string>{
+    return this.http.post <Response> ('http://localhost:3000/api/auth/login',credenciales)
+      .pipe(
+        tap ((data) => {
+          console.log(data);
+        }),
+        map((data) => {
+          return data.ok
+        }),
+        catchError ((error) => {
+          return of ('error')
+        })
+      );
   }
 }
   

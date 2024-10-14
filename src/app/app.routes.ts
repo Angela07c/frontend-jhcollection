@@ -9,6 +9,7 @@ import { ProductFormComponent } from './pages/products/product-form/product-form
 import { CollectionComponent } from './pages/collection/collection.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { authUserGuard } from './guards/auth-user.guard';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -17,10 +18,10 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},
-    {path: 'dashboard', component: DashboardComponent},
-    {path:'product/form', component: ProductFormComponent},
-    {path: 'product/list', component: ProductListComponent},
-    {path: 'product/detail', component: ProductDetailComponent},
+    {path: 'dashboard', component: DashboardComponent,canActivate:[authUserGuard]},
+    {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
+    {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
+    {path: 'product/detail', component: ProductDetailComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 

@@ -42,7 +42,7 @@ export class LoginComponent {
           } else if (!data) {
             this.message = 'El usuario no existe por favor Registrese!!';
           } else {
-            this.message = 'Logeando por favor espere';
+            this.message = 'Logueando por favor espere';
           }
 
           setTimeout(() => {

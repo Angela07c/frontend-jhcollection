@@ -11,10 +11,19 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
+  private authUserData!: User|{};
 
 
   /** Forma anterior a la version Angular 16 */
   constructor( private http: HttpClient, private router: Router ) { }
+
+  /** Esto es un getter (funcion para obtener datos de la clase) */
+
+  get userData (){
+    return {
+      ...this.authUserData
+    }
+  }
 
   registerUser ( newUser: User ) :Observable <boolean|string>{
     return this.http.post <Response>( 'http://localhost:3000/api/auth/register', newUser )
@@ -35,7 +44,11 @@ export class AuthService {
         tap ((data) => {
           console.log(data);
           if(data.token){
-            localStorage.setItem('token',data.token!)
+            localStorage.setItem('token',data.token!);
+            this.authUserData = data.data!
+
+
+
 
             setTimeout(() => {
               this.router.navigateByUrl('dashboard')

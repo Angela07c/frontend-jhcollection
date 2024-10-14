@@ -1,31 +1,3 @@
-<!-- <ul class="menu menu-main">
-    <li> <a 
-        [routerLink]="['home']" 
-        routerLinkActive="active"
-        >home </a>
-    </li>
-    <li> <a 
-        [routerLink]="['product','list']" 
-        routerLinkActive="active" 
-        >product-list </a>
-    </li>
-    <li> <a
-         [routerLink]="['/product/detail']"
-         routerLinkActive="active"
-         >product-detail </a>
-        </li>
-    <li> <a
-         [routerLink]="['/login']"
-         routerLinkActive="active"
-         >login </a>
-        </li>
-    <li> <a 
-        [routerLink]="['/register']"
-        routerLinkActive="active"
-        >register </a>
-    </li>
-    
-</ul> -->
 
 <header class="header">
     <div class="container header">
@@ -57,14 +29,24 @@
                 </li>
                 <li class="menu-item">
                     <a routerLink="/login">login </a>
+                </li>
+                <li class="menu-item">
+                    <a (click)="logout ()">logout </a>
 
                 </li>
             </ul>
         </nav>
         <i class="fa-solid fa-cart-shopping"></i>
         <i class="fa-solid fa-bars"></i>
+        
+        <!-- <pre>{{userData |json }}</pre> -->
+         @if (userData.username ){
+            <p>
 
-        <pre>{{userData |json }}</pre>
+                Bienvenido {{userData.name}}
+             </p>
+         }
+        
     </div>
 </header>
   

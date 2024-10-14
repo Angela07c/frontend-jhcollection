@@ -66,6 +66,12 @@ export class AuthService {
       );
   }
 
+
+  logoutUser (){
+    localStorage.removeItem ('token') 
+
+  }
+
   verifyUser (){
     const token = localStorage.getItem ('token')||''
     const headers = new HttpHeaders ().set ('X-Token',token)

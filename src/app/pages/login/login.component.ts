@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   formData!: FormGroup;
   message!: string;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.formData = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -34,21 +35,26 @@ export class LoginComponent {
       console.log(this.formData.value);
       this.authService
         .loginUser(this.formData.value)
-        .subscribe((data: string | boolean) => {
-          console.log(data);
+        .subscribe((data) => {
+          console.log( data );
 
-          if (data == 'error') {
-            this.message = 'error en el servidor';
-          } else if (!data) {
-            this.message = 'El usuario no existe por favor Registrese!!';
-          } else {
-            this.message = 'Logueando por favor espere';
-          }
+        if ( typeof data === 'string' ) {
+          this.message = data;
+        } else {
+          this.message = 'Ingresando al sistema...';
 
-          setTimeout(() => {
-            this.message = '';
-          }, 2000);
-        });
+          setTimeout( () => {
+            this.router.navigateByUrl( 'dashboard' );   // Redireccionamos al dashboard
+          }, 4000 );
+        }
+
+        /** Ocultamos los mensajes que se visualizan en el formulario */
+        setTimeout( () => {
+          this.message = '';
+        }, 2000 );
+
+      });
+
       this.formData.reset();
     }
   }

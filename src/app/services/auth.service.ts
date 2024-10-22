@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUserData!: User|{};
+  private _authUserData: User|null = null;
 
 
   /** Forma anterior a la version Angular 16 */
@@ -19,10 +19,10 @@ export class AuthService {
 
   /** Esto es un getter (funcion para obtener datos de la clase) */
 
-  get userData (){
-    return {
-      ...this.authUserData
-    }
+  get userData (): User|null{
+    const storedData = localStorage.getItem ('authUserData');
+
+    return this._authUserData || (storedData && storedData !== 'undefined'? JSON.parse (storedData) : null)
   }
 
   registerUser ( newUser: User ) :Observable <boolean|string>{
@@ -38,22 +38,20 @@ export class AuthService {
       );
     }
     
-  loginUser(credenciales: User) :Observable <boolean|string>{
+  loginUser(credenciales: User) :Observable <boolean|string| undefined>{
     return this.http.post <Response> ('http://localhost:3000/api/auth/login',credenciales)
       .pipe(
         tap ((data) => {
           console.log(data);
-          if(data.token){
-            localStorage.setItem('token',data.token!);
-            this.authUserData = data.data!
+          
+          if (data.token){
 
+            if (data.data){
+              this._authUserData = data.data;
+              localStorage.setItem ('authUserData', JSON.stringify (data.data));
 
-
-
-            setTimeout(() => {
-              this.router.navigateByUrl('dashboard')
-            },4000 )
-            
+            }
+            localStorage.setItem ('token', data.token);
           }
           
         }),
@@ -67,9 +65,14 @@ export class AuthService {
   }
 
 
-  logoutUser (){
-    localStorage.removeItem ('token') 
+  logoutUser(): Observable<boolean> {
+    if( this._authUserData ) {
+      this._authUserData = null;                  // Elimina datos del usuario autenticado en el Servicio
+      localStorage.removeItem( 'token' );         // Elimina token del LocalStorage
+      localStorage.removeItem( 'authUserData' );  // Elimina datos del usuario autenticado en el LocalStorage
+    }
 
+    return of( true );
   }
 
   verifyUser (){

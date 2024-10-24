@@ -1,7 +1,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #031926;
+    background-color:black;
 }
 
 /** Header */
@@ -12,7 +12,7 @@ body {
     align-items: center;
     height: 5.88rem;
 
-    background-color: #D9D9D9;
+    background-color:black;
 }
 
 .logo {
@@ -33,7 +33,7 @@ body {
     font-size: 16px;
     justify-content: left;
     gap: 20px;
-    font-family: "Playfair Display", serif;
+    font-family: "Tajawal";
 }
 
 .navbar {
@@ -42,7 +42,7 @@ body {
 
 a {
 
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -290,7 +290,7 @@ ul.Iconos-redes {
     align-items: center;
     gap: 5px;
     justify-content: center;
-    font-family: "Playfair Display", serif;
+    font-family: "Tajawal", serif;
 }
 
 .contáctanos {
@@ -300,7 +300,7 @@ ul.Iconos-redes {
     align-items: center;
     gap: 5px;
     justify-content: center;
-    font-family: "Playfair Display", serif;
+    font-family: "Tajawal", serif;
 }
 
 h2 {
@@ -312,9 +312,9 @@ i.fa-sharp.fa-solid.fa-plus {
 }
 
 p {
-    font-family: "Playfair Display", serif;
+    font-family: "Tajawal", serif;
 
-    color: yellow;
+    color: black;
 }
 
 @media ( max-width: 992px) {

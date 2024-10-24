@@ -11,9 +11,11 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { authUserGuard } from './guards/auth-user.guard';
 
+import { pruebaGuard } from './guards/prueba.guard';
+
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-    {path: 'collection', component: CollectionComponent},
+    {path: 'collection', component: CollectionComponent,canActivate: [pruebaGuard]},
     {path: 'catalog', component: CatalogComponent},
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},

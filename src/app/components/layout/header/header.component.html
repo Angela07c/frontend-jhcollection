@@ -17,6 +17,8 @@
                         <li><a href="#">Inferior</a></li>
                         <li><a href="#">Accesorios</a></li>
                       </ul>
+
+                    <a routerLink="/catalog">catalog</a>
                 </li>
                 <li class="menu-item">
                     <a routerLink="/product/list">product list</a>
@@ -46,7 +48,7 @@
         <i class="fa-solid fa-bars"></i>
         
         <!-- <pre>{{userData |json }}</pre> -->
-         @if (userData.username ){
+         @if (userData ){
             <p>
 
                 Bienvenido {{userData.name}}

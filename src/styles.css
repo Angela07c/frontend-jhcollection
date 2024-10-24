@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: #031926;
@@ -10,6 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 5.88rem;
+
     background-color: #D9D9D9;
 }
 
@@ -39,6 +41,7 @@ body {
 }
 
 a {
+
     color: black;
     text-decoration: none;
 }
@@ -265,6 +268,7 @@ ul.Iconos-redes {
 }
 
 .container-footer {
+
     background-color: #A7BDC7;
     display: flex;
     padding: 30px 2rem;
@@ -309,6 +313,7 @@ i.fa-sharp.fa-solid.fa-plus {
 
 p {
     font-family: "Playfair Display", serif;
+
     color: yellow;
 }
 

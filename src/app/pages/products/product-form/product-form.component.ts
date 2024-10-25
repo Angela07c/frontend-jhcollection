@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { Router, RouterLink } from '@angular/router'; // Asegúrate de tener esto importado
+import { CategoryService } from '../../../services/category.service';
 
 @Component({
   selector: 'app-product-form',
@@ -14,9 +15,9 @@ import { Router, RouterLink } from '@angular/router'; // Asegúrate de tener est
 })
 export class ProductFormComponent {
   productForm!: FormGroup;
-  showModal: boolean = false;
+  categories: any[] = [];
   
-  constructor(private productService: ProductService, private router: Router) { // Inyección correcta del Router
+  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService) { // Inyección correcta del Router
     this.productForm = new FormGroup({
       name: new FormControl('', [ Validators.required ]),
       description: new FormControl(''),
@@ -30,25 +31,22 @@ export class ProductFormComponent {
   onSubmit() {
     if (this.productForm.valid) {
       const formData = this.productForm.value;
-      this.productService.registerProduct(formData).subscribe(
-        response => {
-          console.log('Producto registrado exitosamente'); 
-          this.showModal = true; 
-        },
-        error => {
-          console.error('Error al registrar el producto:', error); 
-        }
-      );
-    } else {
-      console.log('El formulario no es válido');
+      this.productService.registerProduct(formData)
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigateByUrl('product/list')
+      });
+    
+      
     }
+    this.productForm.reset()
   }
 
-  closeModal() {
-    this.showModal = false;
-  }
-  handleAccept() {
-    this.closeModal();         
-    this.productForm.reset();
+  ngOnInit(): void {
+    this.categoryService.getCategory().subscribe((data) => {
+      console.log(data)
+      this.categories = data.data;
+    })
+    
   }
 }

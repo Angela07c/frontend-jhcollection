@@ -68,11 +68,11 @@ export class AuthService {
   }
 
   logoutUser(): Observable<boolean> {
-    if( this._authUserData ) {
-      this._authUserData = null;                  // Elimina datos del usuario autenticado en el Servicio
-      localStorage.removeItem( 'token' );         // Elimina token del LocalStorage
-      localStorage.removeItem( 'authUserData' );  // Elimina datos del usuario autenticado en el LocalStorage
-    }
+
+    this._authUserData = null;                  // Elimina datos del usuario autenticado en el Servicio
+    localStorage.removeItem( 'token' );         // Elimina token del LocalStorage
+    localStorage.removeItem( 'authUserData' );  // Elimina datos del usuario autenticado en el LocalStorage
+
 
     return of( true );
   }

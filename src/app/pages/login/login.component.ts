@@ -19,7 +19,7 @@ export class LoginComponent {
   formData!: FormGroup;
   message!: string;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
 
     this.formData = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.email]),

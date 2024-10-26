@@ -6,6 +6,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    font-family: Tajawal;
 
     .field {
         display: flex;
@@ -14,3 +15,26 @@ form {
         width: 100%;
     }
 }
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: aqua;
+    color:black;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

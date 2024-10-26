@@ -2,22 +2,22 @@
 (ngSubmit)="onSubmit ()">
 
     <div class="field">
-        <label for="name-product">Name product</label>
+        <label for="name-product">Nombre del producto</label>
         <input type="text"  formControlName= "name" id="name-product">
         <div class="error">
             <div *ngIf="productForm.get ('name')?.invalid &&(productForm.get('name')?.dirty || productForm.get ('name')?.touched)">
             <small *ngIf="productForm.get ('name')?.errors?.['required']">
-                El campo 'name' es obligatorio
+                El campo 'nombre del producto' es obligatorio
             </small>
             </div>
         </div>
     </div>
     <div class="field">
-        <label for="">Description</label>
+        <label for="">Descripción</label>
         <textarea name="description" formControlName="description" id= "description"></textarea>
     </div>
     <div class="field">
-        <label for="price">Price</label>
+        <label for="price">Precio</label>
         <input type="number" min= "0" formControlName="price" id="price">
         <div class="error">
             <div *ngIf="productForm.get ('price')?.invalid &&(productForm.get('price')?.dirty || productForm.get ('price')?.touched)">
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="field">
-        <label for="quantity">Quantity</label>
+        <label for="quantity">Cantidad</label>
         <input type="number" formControlName= 'quantity' id="quantity">
         <div class="error">
             <div *ngIf="productForm.get ('quantity')?.invalid &&(productForm.get('quantity')?.dirty || productForm.get ('quantity')?.touched)">
@@ -50,7 +50,7 @@
         
     </div>
     <div class="field">
-        <label for="category">Category</label>
+        <label for="category">Categoría</label>
         <select formControlName="category" id="category">
 
             @for (category of categories; track $index) {
@@ -71,12 +71,12 @@
     </div>
 
     <div class="field">
-        <label for="image">Image Product</label>
+        <label for="image">Imágen del producto</label>
         <input type="text" formControlName="urlImage" id="image"/>
         
    </div>
    <div class="field">
-    <button type="submit" [disabled]="productForm.invalid" >register </button>
+    <button type="submit" [disabled]="productForm.invalid" >Registrar producto </button>
    </div>
 </form>
 

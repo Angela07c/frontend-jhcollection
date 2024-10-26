@@ -11,6 +11,10 @@ export class ProductService {
 
     constructor(private http: HttpClient) { }
 
+    getAllProducts(){
+        return this.http.get<any>('http://localhost:3000/api/products')
+    }
+
     registerProduct(productData: Product): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({

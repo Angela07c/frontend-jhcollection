@@ -1,1 +1,27 @@
-<p>product-list works!</p>
+<table border="1">
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Categoria</th>
+        <th>Coleccion</th>
+    </tr>
+</thead>
+<body>
+    @for (item of products; track $index) {
+        <tr style="color: aliceblue;">
+            <td> {{item.name}} </td>
+            <td> {{item.price}} </td>
+            <td> {{item.quantity}} </td>
+            <td> {{item.category}} </td>
+            <td> {{item.collection}} </td>
+            <td>
+                <a href="#">Editar</a>
+                <a href="#">Eliminar</a>
+            </td>
+        </tr>
+
+    }
+</body>
+</table>

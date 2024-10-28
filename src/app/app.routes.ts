@@ -13,6 +13,7 @@ import { authUserGuard } from './guards/auth-user.guard';
 import { BuyCarComponent } from './pages/buy-car/buy-car.component';
 
 import { pruebaGuard } from './guards/prueba.guard';
+import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
     {path: 'product/detail', component: ProductDetailComponent, canActivate: [authUserGuard]},
+    {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,7 @@ export class ProductListComponent {
 
   products: any [] = [];
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService, private router: Router){}
 
   ngOnInit(){
     this.productService.getAllProducts().subscribe((data) => {
@@ -30,6 +31,8 @@ export class ProductListComponent {
   }
   editar (id:any) {
     console.log('Edita producto'+ id);
+    this.router.navigateByUrl ('product/product-edit/'+ id)
+    
   }
   eliminar (id: any){
     console.log('Elimina producto'+ id);

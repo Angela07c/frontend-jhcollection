@@ -16,6 +16,8 @@ export class ProductFormEditComponent {
   productForm!: FormGroup;
   categories: any[] = [];
   collections: any [] = ['ColeccionV', 'ColeccionI', 'ColeccionP'];
+  idselection: any;
+
   
   constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService, 
     private activatedRoute: ActivatedRoute ) { // Inyección correcta del Router
@@ -32,7 +34,15 @@ export class ProductFormEditComponent {
 
   onSubmit() {
     if (this.productForm.valid) {
+    
     console.log(this.productForm.value)
+
+    this.productService.updateProduct(
+      this.idselection, this.productForm.value
+    ).subscribe ((data)=>{
+      console.log(data)
+      this.router.navigateByUrl ('product/list')
+    })
                 
     }
     this.productForm.reset()
@@ -46,8 +56,10 @@ export class ProductFormEditComponent {
     
     this.activatedRoute.params. subscribe ((data: any)=>{
        console.log(data.id)
+       this.idselection = data.id
        this.productService.getProductById (data.id).subscribe ((data)=>{
         console.log(data)
+
       this.productForm.setValue ({
         name: data.data.name,
         description: data.data.description ,

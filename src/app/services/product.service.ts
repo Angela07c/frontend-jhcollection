@@ -41,4 +41,9 @@ export class ProductService {
     getProductById (id: any){
         return this.http.get <any> (`http://localhost:3000/api/products/${id}`, {headers:this.headers})
     }
+
+    updateProduct (id:any, data: any){
+       return this.http.patch <any> (`http://localhost:3000/api/products/${id}`, data, {headers:this.headers})
+
+    }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CategoryService } from '../../../services/category.service';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +17,8 @@ export class ProductFormEditComponent {
   categories: any[] = [];
   collections: any [] = ['ColeccionV', 'ColeccionI', 'ColeccionP'];
   
-  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService) { // Inyección correcta del Router
+  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService, 
+    private activatedRoute: ActivatedRoute ) { // Inyección correcta del Router
     this.productForm = new FormGroup({
       name: new FormControl('', [ Validators.required ]),
       description: new FormControl(''),
@@ -42,6 +43,25 @@ export class ProductFormEditComponent {
       console.log(data)
       this.categories = data.data;
     })
+    
+    this.activatedRoute.params. subscribe ((data: any)=>{
+       console.log(data.id)
+       this.productService.getProductById (data.id).subscribe ((data)=>{
+        console.log(data)
+      this.productForm.setValue ({
+        name: data.data.name,
+        description: data.data.description ,
+        quantity: data.data.quantity,
+        price: data.data.price,
+        category: data.data.category,
+        collection: data.data.collection,
+        urlImage: data.data.urlImage,
+
+      })
+       })
+    })
+    
+  
     
   }
 }

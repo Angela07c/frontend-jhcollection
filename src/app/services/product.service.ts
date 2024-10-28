@@ -8,20 +8,20 @@ import { Product } from '../interfaces/product';
   providedIn: 'root'
 })
 export class ProductService {
-
-    constructor(private http: HttpClient) { }
+    private token;
+    private headers!: HttpHeaders;
+    
+    constructor(private http: HttpClient) {
+        this.token = localStorage.getItem ('token') || '';
+        this.headers = new HttpHeaders ().set ('X-token',this.token)
+     }
 
     getAllProducts(){
         return this.http.get<any>('http://localhost:3000/api/products')
     }
 
     registerProduct(productData: Product): Observable<any> {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-        'X-Token': token ? token : '',
-    });
-
-    return this.http.post<any>('http://localhost:3000/api/products', productData, { headers })
+         return this.http.post<any>('http://localhost:3000/api/products', productData, {headers:this.headers})
         .pipe(
             tap((response) => {
                 console.log('Respuesta del servidor:', response); // Imprimir la respuesta del servidor
@@ -31,6 +31,12 @@ export class ProductService {
                 return of('Error al registrar el producto');
             })
         );
-}
+    }
+
+    deleteProduct (id: any){
+        return this.http.delete (`http://localhost:3000/api/products/${id}`, {headers:this.headers})
+
+    }
+
 
 }

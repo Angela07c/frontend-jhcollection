@@ -71,6 +71,27 @@
     </div>
 
     <div class="field">
+        <label for="collection">Coleccion</label>
+        <select formControlName="collection" id="collection">
+
+            @for (collection of collections; track $index) {
+                <option [value]="collection"> {{collection}} </option>
+            }
+            
+            
+        </select>
+        <div class="error">
+        <div *ngIf="productForm.get ('collection')?.invalid &&(productForm.get('collection')?.dirty || productForm.get ('collection')?.touched)">
+           
+            <small *ngIf="productForm.get ('collection')?.errors?.['required']">
+            La coleccion es obligatoria
+         </small>
+         
+        </div> 
+        </div>
+    </div>
+
+    <div class="field">
         <label for="image">Imágen del producto</label>
         <input type="text" formControlName="urlImage" id="image"/>
         

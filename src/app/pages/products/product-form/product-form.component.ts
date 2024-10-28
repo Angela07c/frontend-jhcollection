@@ -16,6 +16,7 @@ import { CategoryService } from '../../../services/category.service';
 export class ProductFormComponent {
   productForm!: FormGroup;
   categories: any[] = [];
+  collections: any [] = ['ColeccionV', 'ColeccionI', 'ColeccionP'];
   
   constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService) { // Inyección correcta del Router
     this.productForm = new FormGroup({
@@ -24,6 +25,7 @@ export class ProductFormComponent {
       price: new FormControl(0, [ Validators.required, Validators.min(0) ]),
       quantity: new FormControl(1, [ Validators.required, Validators.min(1) ]),
       category: new FormControl('non-category', [ Validators.required ]),
+      collection: new FormControl ('', [Validators.required]),
       urlImage: new FormControl('')
     });
   }

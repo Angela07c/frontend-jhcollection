@@ -1,6 +1,7 @@
 <table border="1">
 <thead>
-    <tr>
+    
+    <tr style="color: aliceblue;">
         <th>Nombre</th>
         <th>Precio</th>
         <th>Cantidad</th>
@@ -8,20 +9,20 @@
         <th>Coleccion</th>
     </tr>
 </thead>
-<body>
+<tbody>
     @for (item of products; track $index) {
         <tr style="color: aliceblue;">
             <td> {{item.name}} </td>
             <td> {{item.price}} </td>
             <td> {{item.quantity}} </td>
-            <td> {{item.category}} </td>
+            <td> {{item.category.categoria}} </td>
             <td> {{item.collection}} </td>
             <td>
-                <a href="#">Editar</a>
-                <a href="#">Eliminar</a>
+                <a (click)="editar (item._id)">Editar</a>
+                <a (click)="eliminar (item._id)">Eliminar</a>
             </td>
         </tr>
 
     }
-</body>
+</tbody>
 </table>

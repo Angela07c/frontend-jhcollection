@@ -10,10 +10,12 @@ import { CollectionComponent } from './pages/collection/collection.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { authUserGuard } from './guards/auth-user.guard';
-import { BuyCarComponent } from './pages/buy-car/buy-car.component';
+
 
 import { pruebaGuard } from './guards/prueba.guard';
 import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
+import { CategoryFormComponent } from './pages/categories/category-form/category-form.component';
+import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -23,6 +25,8 @@ export const routes: Routes = [
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},
     {path: 'dashboard', component: DashboardComponent,canActivate:[authUserGuard]},
+    {path: 'category/form',component: CategoryFormComponent,canActivate: [authUserGuard]},
+    {path: 'category/list',component: CategoryListComponent, canActivate: [authUserGuard]},
     {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
     {path: 'product/detail', component: ProductDetailComponent, canActivate: [authUserGuard]},

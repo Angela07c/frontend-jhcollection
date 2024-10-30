@@ -10,7 +10,7 @@ import { CollectionComponent } from './pages/collection/collection.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { authUserGuard } from './guards/auth-user.guard';
-import { BuyCarComponent } from './pages/buy-car/buy-car.component';
+
 
 import { pruebaGuard } from './guards/prueba.guard';
 import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';

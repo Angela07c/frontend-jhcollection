@@ -7,7 +7,7 @@ import { User } from '../../../interfaces/user';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule,RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

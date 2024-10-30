@@ -4,32 +4,42 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/product/collection">Colección</a>
+                    <a routerLink="product/collection">Colección</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/product/primavera">Primavera</a></li>
-                        <li><a href="/product/otoño">Otoño</a></li>
-                        <li><a href="/product/invierno">Invierno</a></li>
-                        <li><a href="/product/verano">Verano</a></li>
+                        <li><a routerLink="product/primavera">Primavera</a></li>
+                        <li><a routerLink="product/otoño">Otoño</a></li>
+                        <li><a routerLink="product/invierno">Invierno</a></li>
+                        <li><a routerLink="product/verano">Verano</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/product/catalogo">Catálogo</a>
+                    <a routerLink="product/catalogo">Catálogo</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/product/camisetas">Camisetas</a></li>
-                        <li><a href="/product/buzos">Buzos y chaquetas</a></li>
-                        <li><a href="/product/inferior">Inferior</a></li>
-                        <li><a href="/product/accesorios">Accesorios</a></li>
+                        <li><a routerLink="product/camisetas">Camisetas</a></li>
+                        <li><a routerLink="product/buzos">Buzos y chaquetas</a></li>
+                        <li><a routerLink="product/inferior">Inferior</a></li>
+                        <li><a routerLink="product/accesorios">Accesorios</a></li>
                     </ul>
                 </li>
                 @if(userData) {
                     <li>
-                        <a href="/product/list">Lista de productos</a>
+                        <a routerLink="product/list">Lista de productos</a>
                     </li>
                     <li>
-                        <a href="/product/detail">Detalles de producto </a>
+                        <a routerLink="product/detail">Detalles de producto </a>
                     </li>
                     <li>
-                        <a href="/product/form">Formulario de producto</a>
+                        <a routerLink="product/form">Formulario de producto</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="category/list">Lista de categoria</a>
+                    </li>
+                    <li>
+                        <a routerLink="category/detail">Detalles de categoria </a>
+                    </li>
+                    <li>
+                        <a routerLink="category/form">Formulario de categoria</a>
                     </li>
                 }
                 @if(!userData) {

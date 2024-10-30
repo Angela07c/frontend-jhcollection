@@ -1,0 +1,25 @@
+<table border="1">
+    <thead>
+        
+        <tr style="color: aliceblue;">
+            <th>Categoria</th>
+            <th>Descripcion</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of categories; track $index) {
+            <tr style="color: aliceblue;">
+                <td> {{item.categoria}} </td>
+                <td> {{item.descripcion}} </td>
+               
+                <td>
+                    <a (click)="editar (item._id)">Editar</a>
+                    <a (click)="eliminar (item._id)">Eliminar</a>
+                </td>
+            </tr>
+    
+        }
+    </tbody>
+    </table>
+    

@@ -16,10 +16,7 @@ export class ProductListComponent {
   constructor(private productService: ProductService, private router: Router){}
 
   ngOnInit(){
-    this.productService.getAllProducts().subscribe((data) => {
-      console.log(data);
-      this.products = data.data
-    })
+    this.loadData();
     
   }
   loadData (){

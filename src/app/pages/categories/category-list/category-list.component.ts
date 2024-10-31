@@ -28,7 +28,7 @@ export class CategoryListComponent {
   }
   editar (id:any) {
     console.log('Edita categoria'+ id);
-    // this.router.navigateByUrl ('categories/edit/'+ id)
+    this.router.navigateByUrl ('category/category-edit/'+ id)
     
   }
   eliminar (id: any){

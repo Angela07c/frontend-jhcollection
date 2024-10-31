@@ -16,6 +16,7 @@ import { pruebaGuard } from './guards/prueba.guard';
 import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
 import { CategoryFormComponent } from './pages/categories/category-form/category-form.component';
 import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
+import { CategoryFormEditComponent } from './pages/categories/category-form-edit/category-form-edit.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -27,6 +28,7 @@ export const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent,canActivate:[authUserGuard]},
     {path: 'category/form',component: CategoryFormComponent,canActivate: [authUserGuard]},
     {path: 'category/list',component: CategoryListComponent, canActivate: [authUserGuard]},
+    {path: 'category/category-edit/:id', component: CategoryFormEditComponent, canActivate: [authUserGuard]},
     {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
     {path: 'product/detail', component: ProductDetailComponent, canActivate: [authUserGuard]},

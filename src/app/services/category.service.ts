@@ -34,7 +34,15 @@ export class CategoryService {
 }
 
 deleteCategory (id: any){
-  return this.http.delete (`http://localhost:3000/api/products/${id}`, {headers:this.headers})
+  return this.http.delete (`http://localhost:3000/api/categories/${id}`, {headers:this.headers})
+
+}
+getCategoryById (id: any){
+  return this.http.get <any> (`http://localhost:3000/api/categories/${id}`, {headers:this.headers})
+}
+
+updateCategory (id:any, data: any){
+ return this.http.patch <any> (`http://localhost:3000/api/categories/${id}`, data, {headers:this.headers})
 
 }
 }

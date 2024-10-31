@@ -6,6 +6,8 @@
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    border: 1px solid white;
+
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -23,6 +25,10 @@ ul.product-list {
     list-style: none;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    padding: 0;
+    margin: 0;
 }
 
 img.product-image {
@@ -36,3 +42,49 @@ ul.product-list {
     gap: 1rem;
 }
 
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1rem;
+
+
+
+    * {
+        margin: 0;
+    }
+
+    .price {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: orange;
+    }
+
+    p.text-quantiy {
+        display: flex;
+    }
+
+    .extra {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    
+
+    .btn-add-cart {
+        
+        padding: .4rem;
+        background: orange;
+        border-radius: .3rem;
+    }
+
+    i.fa-solid.fa-cart-arrow-down {
+        color: black;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

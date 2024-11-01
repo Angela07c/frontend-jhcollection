@@ -55,23 +55,22 @@ export class ProductFormEditComponent {
     })
     
     this.activatedRoute.params. subscribe ((data: any)=>{
-       console.log(data.id)
-       this.idselection = data.id
-       this.productService.getProductById (data.id).subscribe ((data)=>{
-        console.log(data)
+        console.log(data.id);
+        this.idselection = data.id;
+        this.productService.getProductById(data.id).subscribe((data) => {
+          console.log(data);
 
-      this.productForm.setValue ({
-        name: data.data.name,
-        description: data.data.description ,
-        quantity: data.data.quantity,
-        price: data.data.price,
-        category: data.data.category,
-        collection: data.data.collection,
-        urlImage: data.data.urlImage,
-
+          this.productForm.setValue({
+            name: data.data.name,
+            description: data.data.description,
+            quantity: data.data.quantity,
+            price: data.data.price,
+            category: data.data.category,
+            collection: data.data.collection,
+            urlImage: data.data.urlImage,
+          });
+        });
       })
-       })
-    })
     
   
     

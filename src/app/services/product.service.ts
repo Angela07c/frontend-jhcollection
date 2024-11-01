@@ -5,7 +5,7 @@ import { Product } from '../interfaces/product';
 
 
 @Injectable({
-  providedIn: 'root'
+providedIn: 'root'
 })
 export class ProductService {
     private token;
@@ -14,14 +14,14 @@ export class ProductService {
     constructor(private http: HttpClient) {
         this.token = localStorage.getItem ('token') || '';
         this.headers = new HttpHeaders ().set ('X-token',this.token)
-     }
+    }
 
     getAllProducts(){
         return this.http.get<any>('http://localhost:3000/api/products')
     }
 
     registerProduct(productData: Product): Observable<any> {
-         return this.http.post<any>('http://localhost:3000/api/products', productData, {headers:this.headers})
+        return this.http.post<any>('http://localhost:3000/api/products', productData, {headers:this.headers})
         .pipe(
             tap((response) => {
                 console.log('Respuesta del servidor:', response); // Imprimir la respuesta del servidor
@@ -39,11 +39,11 @@ export class ProductService {
     }
 
     getProductById (id: any){
-        return this.http.get <any> (`http://localhost:3000/api/products/${id}`, {headers:this.headers})
+        return this.http.get <any> (`http://localhost:3000/api/products/${id}`)
     }
 
     updateProduct (id:any, data: any){
-       return this.http.patch <any> (`http://localhost:3000/api/products/${id}`, data, {headers:this.headers})
+        return this.http.patch <any> (`http://localhost:3000/api/products/${id}`, data, {headers:this.headers})
 
     }
 }

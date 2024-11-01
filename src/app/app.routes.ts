@@ -31,7 +31,7 @@ export const routes: Routes = [
     {path: 'category/category-edit/:id', component: CategoryFormEditComponent, canActivate: [authUserGuard]},
     {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
-    {path: 'product/detail', component: ProductDetailComponent, canActivate: [authUserGuard]},
+    {path: 'product/detail/:id', component: ProductDetailComponent, canActivate: [authUserGuard]},
     {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}

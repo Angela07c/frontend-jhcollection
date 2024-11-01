@@ -9,23 +9,29 @@
         <div #prevButton class="carousel-prev"></div>
         <div #nextButton class="carousel-next"></div>
     </div>
+<!-- <p> {{products}} </p> -->
 
 
-    <ul class="product-list">
-        @for (item of products; track $index) {
-        <li class="product-list-item">
-            <div class="card">
-                <img class="product-image" [src]="item.urlImage" [alt]="item.name" style="width:100%">
-                <div class="product-info">
-                    <h4> {{item.name}}</h4>
-                    <p> {{item.price | currency}} </p>
-                    <p> {{item.quantity}} </p>
-                    <p> {{item.category.categoria}} </p>
-                    <a href="#"> Agregar al carrito </a>
+<ul class="product-list">
+    @for (item of products; track $index) {
+    <li class="product-list-item">
+        <div class="card" [routerLink] ="['../product','detail', item._id]"  >
+            <img class="product-image" [src]="item.urlImage" [alt]="item.name" style="width:100%">
+            <div class="product-info">
+                <h4> {{item.name}}</h4>
+                <p class="price"> {{item.price | currency}} </p>
+                <p class="text-quantiy">Cantidad</p>
+                <div class="extra">
+                    <p class="quantity"> {{item.quantity}} </p>
+                    <p class="category"> {{item.category.categoria}} </p>
+                    <span class="btn btn-add-cart" routerLink="/">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </span>
                 </div>
+                
             </div>
-        </li>
-        }
-    
-    </ul>
-</main>
+        </div>
+    </li>
+    }
+
+</ul>

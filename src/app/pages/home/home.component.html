@@ -4,7 +4,7 @@
 <ul class="product-list">
     @for (item of products; track $index) {
     <li class="product-list-item">
-        <div class="card">
+        <div class="card" [routerLink] ="['/product','detail', item._id]"  >
             <img class="product-image" [src]="item.urlImage" [alt]="item.name" style="width:100%">
             <div class="product-info">
                 <h4> {{item.name}}</h4>

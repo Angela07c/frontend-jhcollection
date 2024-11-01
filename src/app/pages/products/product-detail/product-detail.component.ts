@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,19 +11,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-detail.component.css'
 })
 export class ProductDetailComponent {
-  products : any [] = []
+  product : any;
+  
+  constructor( private productService: ProductService, private activateRoute: ActivatedRoute) {}
 
-  constructor( private productService: ProductService) {}
-
-  loadData(){
-    this.productService.getAllProducts().subscribe((data) => {
-      console.log(data)
-      this.products = data.loadData
-    })
-  }
+  
 
   ngOnInit() {
-    this.loadData()
+    
+    // this.productService.getProductById(['id']).subscribe((product) => {
+      this.activateRoute.params.subscribe((data) => {
+        console.log(data);
+        this.productService.getProductById(data['id']).subscribe((data) => {
+          console.log(data);
+          this.product = data.data;
+        });
+      }) 
+    //   console.log(product);
+    // })
   }
 
 }

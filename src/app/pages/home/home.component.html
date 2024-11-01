@@ -1,5 +1,6 @@
-<!-- <p> {{products}} </p> -->
+<main>
 
+<<<<<<< HEAD
 
 <ul class="product-list">
     @for (item of products; track $index) {
@@ -19,8 +20,34 @@
                 </div>
                 
             </div>
+=======
+    <div class="carousel">
+        <div #carouselWrapper class="carousel-wrapper">
+          <div class="carousel-item"><img src="/public/images/Pantalon retro 2.jpg" alt="Slide 1"></div>
+          <div class="carousel-item"><img src="/public/images/Pantalon retro 2.jpg" alt="Slide 2"></div>
+          <div class="carousel-item"><img src="ttps://via.placeholder.com/800x300?text=Slide+3" alt="Slide 3"></div>
+>>>>>>> 6ecc8431de849f5b604f4bc8f76e26ea4c33660a
         </div>
-    </li>
-    }
+        <div #prevButton class="carousel-prev"></div>
+        <div #nextButton class="carousel-next"></div>
+    </div>
 
-</ul>
+
+    <ul class="product-list">
+        @for (item of products; track $index) {
+        <li class="product-list-item">
+            <div class="card">
+                <img class="product-image" [src]="item.urlImage" [alt]="item.name" style="width:100%">
+                <div class="product-info">
+                    <h4> {{item.name}}</h4>
+                    <p> {{item.price | currency}} </p>
+                    <p> {{item.quantity}} </p>
+                    <p> {{item.category.categoria}} </p>
+                    <a href="#"> Agregar al carrito </a>
+                </div>
+            </div>
+        </li>
+        }
+    
+    </ul>
+</main>

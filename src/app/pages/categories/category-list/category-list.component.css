@@ -1,0 +1,25 @@
+table {
+    border: darkgrey;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Tajawal;
+}
+
+a.eliminar {
+    color: brown;
+    border: 1px solid brown;
+    border-top: solid;
+    cursor: pointer;
+}
+
+a.editar {
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    border-top: solid;
+    cursor: pointer;
+}
+
+th {
+    color: darkorange;
+    text-align: left;
+}

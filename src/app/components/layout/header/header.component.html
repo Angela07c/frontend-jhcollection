@@ -23,23 +23,21 @@
                 </li>
                 @if(userData) {
                     <li>
-                        <a routerLink="product/list">Lista de productos</a>
-                    </li>
-                    <li>
-                        <a routerLink="product/detail">Detalles de producto </a>
-                    </li>
-                    <li>
-                        <a routerLink="product/form">Formulario de producto</a>
+                        <a routerLink="product/product">Producto</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="product/list">Lista de productos</a></li>
+                            <li><a routerLink="product/detail">Detalles de producto </a></li>
+                            <li><a routerLink="product/form">Formulario de producto</a></li>
+                        </ul>
                     </li>
 
                     <li>
-                        <a routerLink="category/list">Lista de categoria</a>
-                    </li>
-                    <li>
-                        <a routerLink="category/detail">Detalles de categoria </a>
-                    </li>
-                    <li>
-                        <a routerLink="category/form">Formulario de categoria</a>
+                        <a routerLink="product/category">Categoría</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="category/list">Lista de categoria</a></li>
+                            <li><a routerLink="category/detail">Detalles de categoria </a></li>
+                            <li><a routerLink="category/form">Formulario de categoria</a></li>
+                        </ul>
                     </li>
                 }
                 @if(!userData) {

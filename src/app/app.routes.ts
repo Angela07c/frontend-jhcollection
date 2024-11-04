@@ -6,21 +6,21 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
-import { CollectionComponent } from './pages/collection/collection.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { authUserGuard } from './guards/auth-user.guard';
 
 
-import { pruebaGuard } from './guards/prueba.guard';
 import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
 import { CategoryFormComponent } from './pages/categories/category-form/category-form.component';
 import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
 import { CategoryFormEditComponent } from './pages/categories/category-form-edit/category-form-edit.component';
+import { CollectionFormComponent } from './pages/collection-form/collection-form.component';
+import { CollectionListComponent } from './pages/collection-list/collection-list.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-    {path: 'collection', component: CollectionComponent,canActivate: [pruebaGuard]},
+
     {path: 'catalog', component: CatalogComponent},
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
@@ -33,6 +33,8 @@ export const routes: Routes = [
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
     {path: 'product/detail/:id', component: ProductDetailComponent, canActivate: [authUserGuard]},
     {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
+    {path: 'collection/form', component: CollectionFormComponent, canActivate:[authUserGuard]},
+    {path: 'collection/list', component: CollectionListComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 

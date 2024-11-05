@@ -36,7 +36,7 @@ select {
     border: 1px solid #555; /* Borde gris oscuro */
     border-radius: 5px; /* Bordes redondeados */
     background-color: antiquewhite;
-    color: #ffffff; /* Texto blanco */
+    color: black; /* Texto blanco */
     font-size: 14px; /* Tamaño de texto más pequeño */
     transition: border-color 0.3s, background-color 0.3s; /* Efecto al enfocar */
 }
@@ -46,7 +46,7 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
     border-color: #ffcc00; /* Borde amarillo al enfocar */
-    background-color: #444; /* Fondo más claro al enfocar */
+    background-color: whitesmoke; /* Fondo más claro al enfocar */
 }
 
 .error {

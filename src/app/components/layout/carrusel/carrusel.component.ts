@@ -1,32 +1,32 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProductService } from '../../../services/product.service';
+  import { Component, ElementRef, ViewChild } from '@angular/core';
+  import { ProductService } from '../../../services/product.service';
 
-@Component({
-  selector: 'app-carrusel',
-  standalone: true,
-  imports: [],
-  templateUrl: './carrusel.component.html',
-  styleUrl: './carrusel.component.css'
-})
-export class CarruselComponent {
-  prominentProducts: any [] = []
-  @ViewChild('slidesContainer', { static: false }) slidesContainer!: ElementRef;
-  @ViewChild('slide', { static: false }) slide!: ElementRef;
-  @ViewChild('prevButton', { static: false }) prevButton!: ElementRef;
-  @ViewChild('nextButton', { static: false }) nextButton!: ElementRef;
+  @Component({
+    selector: 'app-carrusel',
+    standalone: true,
+    imports: [],
+    templateUrl: './carrusel.component.html',
+    styleUrl: './carrusel.component.css'
+  })
+  export class CarruselComponent {
+    prominentProducts: any [] = []
+    @ViewChild('slidesContainer', { static: false }) slidesContainer!: ElementRef;
+    @ViewChild('slide', { static: false }) slide!: ElementRef;
+    @ViewChild('prevButton', { static: false }) prevButton!: ElementRef;
+    @ViewChild('nextButton', { static: false }) nextButton!: ElementRef;
 
-  constructor(private productService: ProductService ) { }
+    constructor(private productService: ProductService ) { }
 
-  loadData(){
-    this.productService.getAllProducts().subscribe
-    ((data) => {
-      this.prominentProducts = data.data.filter ((product:any)=>{
-        return product.prominent
-      }) 
-      console.log(this.prominentProducts)
-    })
-    
-  }
+    loadData(){
+      this.productService.getAllProducts().subscribe
+      ((data) => {
+        this.prominentProducts = data.data.filter ((product:any)=>{
+          return product.prominent
+        }) 
+        console.log(this.prominentProducts)
+      })
+      
+    }
 
 
   ngOnInit(): void {

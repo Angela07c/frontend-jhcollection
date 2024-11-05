@@ -94,6 +94,7 @@ ul.product-list {
     display: flex;
     list-style: none;
     gap: 1rem;
+    padding: 4rem 0;
 }
 
 .product-info {

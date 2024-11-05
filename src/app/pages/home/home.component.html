@@ -1,16 +1,6 @@
+<!-- <pre style="color: orange;">{{prominentProducts|json}}</pre> -->
 <main>
-
-    <div class="carousel">
-        <div #carouselWrapper class="carousel-wrapper">
-          <div class="carousel-item"><img src="https://imgur.com/kagMNks" alt="Slide 1"></div>
-          <div class="carousel-item"><img src="/public/images/Chaqueta cuadros HOME.jpg" alt="Slide 2"></div>
-          <div class="carousel-item"><img src="/public/images/Chaqueta cuadros HOME.jpg" alt="Slide 3"></div>
-        </div>
-        <div #prevButton class="carousel-prev"></div>
-        <div #nextButton class="carousel-next"></div>
-    </div>
-<!-- <p> {{products}} </p> -->
-
+    <app-carrusel> </app-carrusel>
 
 <ul class="product-list">
     @for (item of products; track $index) {

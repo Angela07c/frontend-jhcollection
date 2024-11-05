@@ -17,6 +17,7 @@ import { CategoryListComponent } from './pages/categories/category-list/category
 import { CategoryFormEditComponent } from './pages/categories/category-form-edit/category-form-edit.component';
 import { CollectionFormComponent } from './pages/collection-form/collection-form.component';
 import { CollectionListComponent } from './pages/collection-list/collection-list.component';
+import { CollectionFormEditComponent } from './pages/collection-form-edit/collection-form-edit.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -35,6 +36,7 @@ export const routes: Routes = [
     {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: 'collection/form', component: CollectionFormComponent, canActivate:[authUserGuard]},
     {path: 'collection/list', component: CollectionListComponent, canActivate: [authUserGuard]},
+    {path: 'collection/collection-edit/:id', component: CollectionFormEditComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 

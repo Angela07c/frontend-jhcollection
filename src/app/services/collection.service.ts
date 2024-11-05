@@ -38,4 +38,11 @@ export class CollectionService {
       headers: this.headers,
     });
   }
+  getCollectionById (id: any){
+    return this.http.get <any> (`http://localhost:3000/api/collection/${id}`)
+  }
+  updateCollection (id:any, data: any){
+    return this.http.patch <any> (`http://localhost:3000/api/collection/${id}`, data, {headers:this.headers})
+   
+   }
 }

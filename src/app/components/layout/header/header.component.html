@@ -3,15 +3,7 @@
         <a routerLink="/home"> <img src="images/logo.png" alt="logo" class="logo"></a>
         <nav>
             <ul>
-                <li>
-                    <a routerLink="product/collection">Colección</a>
-                    <ul class="dropdown-menu">
-                        <li><a routerLink="product/primavera">Primavera</a></li>
-                        <li><a routerLink="product/otoño">Otoño</a></li>
-                        <li><a routerLink="product/invierno">Invierno</a></li>
-                        <li><a routerLink="product/verano">Verano</a></li>
-                    </ul>
-                </li>
+                
                 <li>
                     <a routerLink="product/catalogo">Catálogo</a>
                     <ul class="dropdown-menu">
@@ -22,6 +14,13 @@
                     </ul>
                 </li>
                 @if(userData) {
+                    <li>
+                        <a routerLink="product/collection">Colección</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="collection/list">Lista de coleccion</a></li>
+                            <li><a routerLink="collection/form">Formulario de coleccion</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a routerLink="product/product">Producto</a>
                         <ul class="dropdown-menu">

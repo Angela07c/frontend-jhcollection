@@ -25,6 +25,7 @@ export class CollectionListComponent {
     });
   }
   editar (id:any){
+    this.router.navigateByUrl ('collection/collection-edit/'+id)
     console.log('editar',id)
 
   }

@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { CamisetasComponent } from './catalog/camisetas/camisetas.component';
+import { CamisetasComponent } from './pages/catalog/camisetas/camisetas.component';
+import { BuzosComponent } from './pages/catalog/buzos/buzos.component';
+import { InferiorComponent } from './pages/catalog/inferior/inferior.component';
+import { AccesoriosComponent } from './pages/catalog/accesorios/accesorios.component';
 import { ProductListComponent } from './pages/products/product-list/product-list.component';
 import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -25,6 +28,9 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'catalog', component: CatalogComponent},
     {path: 'camisetas', component: CamisetasComponent},
+    {path: 'buzos', component: BuzosComponent},
+    {path: 'inferior', component: InferiorComponent},
+    {path: 'accesorios', component: AccesoriosComponent},
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},

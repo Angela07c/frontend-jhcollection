@@ -5,6 +5,8 @@ import { RouterLink } from '@angular/router';
 import { CarruselComponent } from '../../components/layout/carrusel/carrusel.component';
 import { Product } from '../../interfaces/product';
 
+import { CartService } from '../../services/cart.service.service';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -22,7 +24,10 @@ export class HomeComponent {
   @Input() productValue!: Product;
   
 
-  constructor( private productService: ProductService) {}
+  constructor( 
+    private productService: ProductService,
+    private cartService: CartService
+  ) {}
 
   loadData(){
     this.productService.getAllProducts().subscribe
@@ -38,6 +43,9 @@ export class HomeComponent {
   ngOnInit() {
     this.loadData()
     
+  }
+  addToCart(item: any){
+    this.cartService.addToCart(item)
   }
 
 

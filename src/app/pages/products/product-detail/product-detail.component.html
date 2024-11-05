@@ -34,15 +34,21 @@
                     <div class="quantity">
                         <h3> {{ product?.quantity }} </h3>
                     </div>
-                        <div class="button-selector">
-                            <button class="mas-menos">-</button>
-                            <input type="number" value="1" min="1">
-                            <button class="mas-menos">+</button>
-                        </div>
-                    <span class="btn-add-cart">
+                        <!-- <div class="button-selector">
+                            {{order}}
+                            <button (click)="removeOneItem(product._id)" class="mas-menos">-</button>
+                            <input class="order" type="text" [value]="order">
+                            <button (click)="addOneItem(product._id)" class="mas-menos">+</button>
+                        </div> -->
+                    <span class="btn-add-cart" (click)="addToCart(product)">
                         <i class="fa-solid fa-cart-arrow-down"></i>
                     </span>
-                    <button class="btn-buy-now">Comprar ahora</button>
+                    <!-- <button class="btn-buy-now" (click)="openCart()">Comprar ahora
+
+                    </button>
+                    <span class="btn-add-cart" (click)="openCart()">
+                        
+                    </span> -->
                 </div>
             </div>
             

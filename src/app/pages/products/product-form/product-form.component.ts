@@ -26,7 +26,7 @@ export class ProductFormComponent {
       price: new FormControl(0, [ Validators.required, Validators.min(0) ]),
       quantity: new FormControl(1, [ Validators.required, Validators.min(1) ]),
       category: new FormControl('non-category', [ Validators.required ]),
-      collection: new FormControl ('', [Validators.required]),
+      line: new FormControl ('', [Validators.required]),
       urlImage: new FormControl('')
     });
   }

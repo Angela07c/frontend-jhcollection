@@ -16,6 +16,7 @@ import { ProductFormEditComponent } from './pages/products/product-form-edit/pro
 import { CategoryFormComponent } from './pages/categories/category-form/category-form.component';
 import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
 import { CategoryFormEditComponent } from './pages/categories/category-form-edit/category-form-edit.component';
+import { CheckoutComponent } from './pages/products/checkout/checkout.component';
 import { CollectionFormComponent } from './pages/collection-form/collection-form.component';
 import { CollectionListComponent } from './pages/collection-list/collection-list.component';
 import { CollectionFormEditComponent } from './pages/collection-form-edit/collection-form-edit.component';
@@ -27,17 +28,18 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},
+    {path: 'checkout', component: CheckoutComponent},
     {path: 'dashboard', component: DashboardComponent,canActivate:[authUserGuard]},
     {path: 'category/form',component: CategoryFormComponent,canActivate: [authUserGuard]},
     {path: 'category/list',component: CategoryListComponent, canActivate: [authUserGuard]},
-    {path: 'category/category-edit/:id', component: CategoryFormEditComponent, canActivate: [authUserGuard]},
-    {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
+    {path: 'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
-    {path: 'product/detail/:id', component: ProductDetailComponent, canActivate: [authUserGuard]},
-    {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: 'collection/form', component: CollectionFormComponent, canActivate:[authUserGuard]},
     {path: 'collection/list', component: CollectionListComponent, canActivate: [authUserGuard]},
+    {path: 'product/detail/:id', component: ProductDetailComponent, canActivate: [authUserGuard]},
+    {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: 'collection/collection-edit/:id', component: CollectionFormEditComponent, canActivate: [authUserGuard]},
+    {path: 'category/category-edit/:id', component: CategoryFormEditComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}
 

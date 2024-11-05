@@ -1,8 +1,8 @@
 export interface Product {
     name: string,
     description?: string,
-    price?: number,
-    quantity?: string,
+    price: number,
+    quantity: number,
     category: string,
     urlImage?: string,
     state?: string,
@@ -10,5 +10,6 @@ export interface Product {
     createdAt?: string,
     updatedAt?: string,
     __v?: number,
-    _id?: string
+    _id?: string,
+    
 }

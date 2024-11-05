@@ -1,4 +1,7 @@
 
+  
+
+
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color:black;
@@ -408,5 +411,35 @@ input.order {
     color: #ffffff;
     margin-right: 20px;
     margin-left: 20px;
-    font-family: tajawal;
+    font-family: "Tajawal";
+}
+
+h3 {
+    margin-left: 1rem;
+    font-family: "Tajawal";
+}
+
+label{
+    margin-left: 1rem;
+    font-family: "Tajawal";
+}
+.quantity{
+    margin-left: 0rem;
+}
+
+h1.tittle-product{
+    margin: auto;
+    text-align: unset;
+    color: orange;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-family: Tajawal;
+}
+i.fa-solid.fa-cart-arrow-down{
+
+    padding-left: 0.7rem;
+   
+}
+h4 {
+    font-family: Tajawal;
 }

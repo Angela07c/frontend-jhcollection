@@ -133,6 +133,7 @@ ul.product-list {
         padding: .4rem;
         background: orange;
         border-radius: .3rem;
+        padding-right: 1rem;
     }
 
     i.fa-solid.fa-cart-arrow-down {
@@ -141,5 +142,11 @@ ul.product-list {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .product-info{
+        padding: 0.4rem;
+        background: orange;
+        border-radius: 0.3rem;
+        padding-left: 0rem;
     }
 }

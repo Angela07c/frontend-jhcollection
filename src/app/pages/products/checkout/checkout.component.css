@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif; /* Tipo de letra de la página */
+    background-color: #faeaea; /* Color de fondo suave para toda la página */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 20px; /* Espacio alrededor del contenido de la página */
+}
+
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centrar el contenedor en la página */
+    background: white; /* Fondo blanco para el contenedor */
+    padding: 20px; /* Espacio interno del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+}
+
+.cart-items {
+    margin-bottom: 20px; /* Espacio inferior en la sección de artículos */
+}
+
+.cart-item {
+    display: flex; /* Usar flexbox para alinear elementos en una fila */
+    align-items: center; /* Alinear verticalmente en el centro */
+    border-bottom: 1px solid #ddd; /* Borde inferior para separar items */
+    padding: 15px 0; /* Espacio interno arriba y abajo */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Eliminar el borde en el último elemento */
+}
+
+.cart-item img {
+    width: 100px; /* Ancho fijo para las imágenes */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin-right: 15px; /* Espacio a la derecha de la imagen */
+}
+
+.item-info {
+    flex-grow: 1; /* Permitir que este elemento ocupe el espacio restante */
+}
+
+.descripcion {
+    font-size: 14px; /* Tamaño de la fuente para la descripción */
+    color: #555; /* Color gris para la descripción */
+}
+
+.price {
+    font-weight: bold; /* Negrita para el precio */
+    color: #333; /* Color oscuro para el precio */
+}
+
+.cantidad {
+    display: flex; /* Usar flexbox para alinear botones y campo de entrada */
+    align-items: center; /* Alinear verticalmente en el centro */
+}
+
+.cantidad button {
+    background-color: #007bff; /* Color azul para los botones */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin bordes */
+    padding: 5px 10px; /* Espacio interno en los botones */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados para los botones */
+}
+
+.cantidad button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+.cantidad input {
+    width: 40px; /* Ancho fijo del campo de cantidad */
+    text-align: center; /* Centrar texto en el campo */
+}
+
+.cart-totals {
+    background-color: #f9f9f9; /* Fondo claro para la sección de totales */
+    padding: 15px; /* Espacio interno alrededor del contenido */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.cart-totals h3 {
+    margin-top: 0; /* Eliminar margen superior del título */
+}
+
+.totals-row {
+    display: flex; /* Usar flexbox para alinear elementos en una fila */
+    justify-content: space-between; /* Espacio entre etiquetas y valores */
+    padding: 5px 0; /* Espaciado vertical entre filas */
+}
+
+.total {
+    font-weight: bold; /* Negrita para el total final */
+}
+
+.checkout-btn {
+    background-color: #28a745; /* Color verde para el botón de pago */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Espacio interno en el botón */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+}
+
+.checkout-btn:hover {
+    background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+.shopping-cart p {
+    text-align: center; /* Centrar el texto del mensaje */
+    font-size: 18px; /* Tamaño de fuente para el mensaje */
+    color: #999; /* Color gris claro para el mensaje */
+ }
+ 
+.quiantity{
+    background-color: black;
+}
+
+.button-selector {
+    background-color: black;
+}

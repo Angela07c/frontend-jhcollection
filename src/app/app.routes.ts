@@ -17,6 +17,7 @@ import { ProductFormEditComponent } from './pages/products/product-form-edit/pro
 import { CategoryFormComponent } from './pages/categories/category-form/category-form.component';
 import { CategoryListComponent } from './pages/categories/category-list/category-list.component';
 import { CategoryFormEditComponent } from './pages/categories/category-form-edit/category-form-edit.component';
+import { CheckoutComponent } from './pages/products/checkout/checkout.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -32,6 +33,7 @@ export const routes: Routes = [
     {path:'product/form', component: ProductFormComponent, canActivate:[authUserGuard]},
     {path: 'product/list', component: ProductListComponent, canActivate: [authUserGuard]},
     {path: 'product/detail/:id', component: ProductDetailComponent, canActivate: [authUserGuard]},
+    {path: 'checkout', component: CheckoutComponent, canActivate: [authUserGuard]},
     {path: 'product/product-edit/:id', component: ProductFormEditComponent, canActivate: [authUserGuard]},
     {path: '', redirectTo: 'home', pathMatch:'full'},
     {path: '**', redirectTo: '404', pathMatch: 'full'}

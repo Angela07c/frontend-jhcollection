@@ -1,7 +1,7 @@
 export interface Product {
     name: string,
     description?: string,
-    price?: number,
+    price: number,
     quantity?: string,
     category: string,
     urlImage?: string,
@@ -10,5 +10,6 @@ export interface Product {
     createdAt?: string,
     updatedAt?: string,
     __v?: number,
-    _id?: string
+    _id?: string,
+    stock: number
 }

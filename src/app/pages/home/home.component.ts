@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CarruselComponent } from '../../components/layout/carrusel/carrusel.component';
+import { Product } from '../../interfaces/product';
+
 import { CartService } from '../../services/cart.service.service';
 
 @Component({
@@ -15,7 +17,12 @@ import { CartService } from '../../services/cart.service.service';
 export class HomeComponent {
 
   products: any [] = [];
-  prominentProducts: any [] = []
+  prominentProducts: any [] = [];
+
+  product!: Product;
+  quantity: number = 1; 
+  @Input() productValue!: Product;
+  
 
   constructor( 
     private productService: ProductService,
@@ -40,5 +47,6 @@ export class HomeComponent {
   addToCart(item: any){
     this.cartService.addToCart(item)
   }
+
 
 }

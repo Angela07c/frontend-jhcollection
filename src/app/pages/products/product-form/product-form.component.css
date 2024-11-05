@@ -22,10 +22,12 @@ form  {
     flex-direction: column; /* Direccionar los elementos verticalmente */
 }
 
+
 label {
-    margin-bottom: 5px; /* Espacio entre etiqueta y campo */
-    font-weight: bold; /* Texto en negrita */
-    color: #ffcc00; /* Color de las etiquetas en amarillo vibrante */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+    font-family: 'Tajawal';
 }
 
 input[type="text"],
@@ -66,11 +68,10 @@ button {
     align-self: center; /* Centrar el botón */
 }
 
-button:disabled {
-    background-color: #555; /* Color de botón deshabilitado */
-    cursor: not-allowed; /* Cambiar cursor a no permitido */
+button[_ngcontent-ng-c3417631063]:disabled {
+    background-color: #00beff;
+    cursor: not-allowed;
 }
-
 button:hover:not(:disabled) {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 }

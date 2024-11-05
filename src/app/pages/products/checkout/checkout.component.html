@@ -25,7 +25,7 @@
                     </div>
                     <div class="price">{{ item.total | currency }}</div>
                     <!-- Botón para eliminar el producto -->
-                    <button class="remove-btn" (click)="removeItem(item.info._id)">Remove</button>
+                    <button class="remove-btn" (click)="removeItem(item.info._id)">Eliminar</button>
                 </div>
             }
         }
@@ -38,19 +38,19 @@
     
     <!-- Cart Totals Section -->
     <div class="cart-totals">
-        <h3>Cart Totals</h3>
+        <h3>TOTAL</h3>
         <div class="totals-row">
             <span>Subtotal</span>
             <span>{{ total | currency }}</span>
         </div>
         <div class="totals-row">
-            <span>Estimated Delivery</span>
-            <span>Free</span>
+            <span>Entrega Estimada</span>
+            <span>1 - 8 dias hábiles </span>
         </div>
         <div class="totals-row total">
             <span>Total</span>
             <span>{{ total | currency }}</span>
         </div>
-        <button class="checkout-btn" [routerLink]="['/purchase-completed']">Proceed to checkout</button>
+        <button class="checkout-btn" [routerLink]="['/purchase-completed']">Continua para pago</button>
     </div>
 </div>

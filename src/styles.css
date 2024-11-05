@@ -41,9 +41,9 @@ body {
 }
 
 a {
-
     color: white;
     text-decoration: none;
+    display: inline-flex;
 }
 
 .btn-add-cart {
@@ -389,4 +389,24 @@ section.slider-wrapper {
 
 input.order {
     color: black;
+}
+
+.cart-totals {
+    margin-top: 0;
+    color: #ffcc00;
+    font-family: Tajawal;
+}
+
+.item-info{
+    font-size: 18px;
+    color: wheat;
+    font-family: Tajawal;
+}
+
+.price{
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-family: tajawal;
 }

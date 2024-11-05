@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CarruselComponent } from '../../components/layout/carrusel/carrusel.component';
+import { Product } from '../../interfaces/product';
+
+import { CartService } from '../../services/cart.service.service';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +17,17 @@ import { CarruselComponent } from '../../components/layout/carrusel/carrusel.com
 export class HomeComponent {
 
   products: any [] = [];
-  prominentProducts: any [] = []
+  prominentProducts: any [] = [];
 
-  constructor( private productService: ProductService) {}
+  product!: Product;
+  quantity: number = 1; 
+  @Input() productValue!: Product;
+  
+
+  constructor( 
+    private productService: ProductService,
+    private cartService: CartService
+  ) {}
 
   loadData(){
     this.productService.getAllProducts().subscribe
@@ -33,5 +44,9 @@ export class HomeComponent {
     this.loadData()
     
   }
+  addToCart(item: any){
+    this.cartService.addToCart(item)
+  }
+
 
 }

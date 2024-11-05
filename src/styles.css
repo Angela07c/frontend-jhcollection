@@ -52,7 +52,7 @@ a {
 
 i.fa-solid.fa-cart-shopping {
     font-size: 30px;
-    color: black;
+    color: white;
     margin: 30px;
 }
 
@@ -380,9 +380,14 @@ img.img.img-1 {
     background-position-y: center;
 }
 
+
 section.slider-wrapper {
     height: 32rem;
 }
 
    
 
+
+input.order {
+    color: black;
+}

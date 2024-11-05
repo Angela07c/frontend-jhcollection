@@ -28,7 +28,7 @@ export class ProductFormEditComponent {
       price: new FormControl(0, [ Validators.required, Validators.min(0) ]),
       quantity: new FormControl(1, [ Validators.required, Validators.min(1) ]),
       category: new FormControl('non-category', [ Validators.required ]),
-      collection: new FormControl ('', [Validators.required]),
+      line: new FormControl ('', [Validators.required]),
       urlImage: new FormControl(''),
       prominent: new FormControl (false)
     });
@@ -73,7 +73,7 @@ export class ProductFormEditComponent {
             quantity: data.data.quantity,
             price: data.data.price,
             category: data.data.category,
-            collection: data.data.collection,
+            line: data.data.line,
             urlImage: data.data.urlImage,
             prominent: data.data.prominent
           });

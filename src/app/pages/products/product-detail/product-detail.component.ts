@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { CheckoutComponent } from '../checkout/checkout.component';
+import { CartService } from '../../../services/cart.service.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,10 +14,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent {
   product : any;
-  
-  constructor( private productService: ProductService, private activateRoute: ActivatedRoute) {}
 
-  
+  constructor( 
+    private productService: ProductService,
+    private activateRoute: ActivatedRoute,
+    private cartService: CartService
+    
+  ) {}
+
+  get order(){
+    return this.cartService.currentOrder
+  }
 
   ngOnInit() {
     
@@ -31,4 +40,17 @@ export class ProductDetailComponent {
     // })
   }
 
-}
+  addToCart(item: any){
+    this.cartService.addToCart(item)
+  }
+
+  addOneItem(id: any){
+    this.cartService.addOneItemToCart(id)
+  }
+
+  removeOneItem(id:any){
+    this.cartService.substractOneItemToCart(id)
+  }
+
+  }
+

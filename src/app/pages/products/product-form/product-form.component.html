@@ -72,7 +72,7 @@
 
     <div class="field">
         <label for="collection">Coleccion</label>
-        <select formControlName="collection" id="collection">
+        <select formControlName="line" id="collection">
 
             @for (collection of collections; track $index) {
                 <option [value]="collection._id"> {{collection.coleccion}} </option>
@@ -81,9 +81,9 @@
             
         </select>
         <div class="error">
-        <div *ngIf="productForm.get ('collection')?.invalid &&(productForm.get('collection')?.dirty || productForm.get ('collection')?.touched)">
+        <div *ngIf="productForm.get ('line')?.invalid &&(productForm.get('line')?.dirty || productForm.get ('line')?.touched)">
            
-            <small *ngIf="productForm.get ('collection')?.errors?.['required']">
+            <small *ngIf="productForm.get ('line')?.errors?.['required']">
             El valor no puede ser negativo
          </small>
          

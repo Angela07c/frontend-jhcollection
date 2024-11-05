@@ -38,7 +38,7 @@ export class CartService {
         total: product.price // Total inicial basado en la cantidad de 1
       };
       this.shoppingCart.push(this.item);
-    } else if ( productFound.order < product.stock ) {
+    } else if ( productFound.order < product.quantity ) {
       // Si el producto ya está en el carrito y no se ha alcanzado el límite, incrementar 'order'
       productFound.order += 1;
       productFound.total = productFound.order * product.price;
@@ -69,7 +69,7 @@ export class CartService {
       // Verifico el producto con ID que voy a modificar
       if( item.info._id === id ) {
         // Verificando que la orden no sea CERO & que haya un Stock disponible
-        if( item.order !== 0 && item.info.stock ) {
+        if( item.order !== 0 && item.info.quantity ) {
           item.order += 1;
           item.total = item.info.price * item.order;
         }
@@ -89,7 +89,7 @@ export class CartService {
       // Verifico el producto con ID que voy a modificar
       if( item.info._id === id ) {
         // Verificando que la orden no sea CERO & que haya un Stock disponible
-        if( item.order !== 0 && item.info.stock ) {
+        if( item.order !== 0 && item.info.quantity ) {
           item.order -= 1;
           item.total = item.info.price * item.order;
         }

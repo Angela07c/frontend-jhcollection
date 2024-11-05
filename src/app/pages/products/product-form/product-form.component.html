@@ -75,7 +75,7 @@
         <select formControlName="collection" id="collection">
 
             @for (collection of collections; track $index) {
-                <option [value]="collection"> {{collection}} </option>
+                <option [value]="collection._id"> {{collection.coleccion}} </option>
             }
             
             
@@ -84,7 +84,7 @@
         <div *ngIf="productForm.get ('collection')?.invalid &&(productForm.get('collection')?.dirty || productForm.get ('collection')?.touched)">
            
             <small *ngIf="productForm.get ('collection')?.errors?.['required']">
-            La coleccion es obligatoria
+            El valor no puede ser negativo
          </small>
          
         </div> 

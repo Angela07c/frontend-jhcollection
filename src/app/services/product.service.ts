@@ -46,4 +46,8 @@ export class ProductService {
         return this.http.patch <any> (`http://localhost:3000/api/products/${id}`, data, {headers:this.headers})
 
     }
+
+    getProductByCategory ( category: any ){
+        this.http.get <any> (`http://localstorage:3000/api/catalog/${category}`)
+    }
 }

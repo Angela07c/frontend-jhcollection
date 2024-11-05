@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { CamisetasComponent } from './catalog/camisetas/camisetas.component';
 import { ProductListComponent } from './pages/products/product-list/product-list.component';
 import { ProductDetailComponent } from './pages/products/product-detail/product-detail.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -21,8 +22,8 @@ import { CollectionFormEditComponent } from './pages/collection-form-edit/collec
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-
     {path: 'catalog', component: CatalogComponent},
+    {path: 'camisetas', component: CamisetasComponent},
     {path: 'login', component:LoginComponent},
     {path: 'register',component:RegisterComponent},
     {path: '404', component: PageNotFoundComponent},

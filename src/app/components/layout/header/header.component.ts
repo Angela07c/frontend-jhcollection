@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { User } from '../../../interfaces/user';
+import { Product } from '../../../interfaces/product';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,10 @@ import { User } from '../../../interfaces/user';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+
+  products: Product[] = []; // Todos los productos
+  filteredProducts: Product[] = []; // Productos filtrados
+
   constructor(private authService: AuthService,private router: Router) {}
 
   get userData(): User | null {
@@ -22,6 +27,14 @@ export class HeaderComponent {
   logout (){
    this.authService.logoutUser ()
     this.router.navigateByUrl ('login')
+  }
+
+  filtrarPorCategoria(category: string): void {
+    if (category === 'todos') {
+      this.filteredProducts = [...this.products]; // Si es "todos", mostramos todos los productos
+    } else {
+      this.filteredProducts = this.products.filter(product => product.category === category); // Filtramos por categoría
+    }
   }
 }
 

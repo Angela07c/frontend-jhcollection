@@ -29,7 +29,10 @@ export class CollectionListComponent {
 
   }
   eliminar (id: any){
-    console.log('eliminar',id)
+    this.collectionService.deleteCollections(id).subscribe ((data)=>{
+    console.log(data);
+    })
+    
 
   }
 }

@@ -14,8 +14,12 @@
                 <td> {{item.descripcion}} </td>
                
                 <td>
-                    <a class="editar" (click)="editar (item._id)">Editar</a>
-                    <a class="eliminar" (click)="eliminar (item._id)">Eliminar</a>
+                    <a class="editar" (click)="editar (item._id)">
+                        <img src="images/pencil.png" alt="">
+                    </a>
+                    <a class="eliminar" (click)="eliminar (item._id)">
+                        <img src="images/trash.png" alt="">
+                    </a>
                 </td>
             </tr>
     

@@ -1,25 +1,30 @@
 table {
     border: darkgrey;
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     font-family: Tajawal;
-}
-
-a.eliminar {
-    color: brown;
-    border: 1px solid brown;
-    border-top: solid;
-    cursor: pointer;
-}
-
-a.editar {
-    color: dodgerblue;
-    border: 1px solid dodgerblue;
-    border-top: solid;
-    cursor: pointer;
+    margin: 10% auto;
 }
 
 th {
     color: darkorange;
     text-align: left;
+}
+td.edit {
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+}
+a.eliminar {
+    cursor: pointer;
+    padding: 5%;
+    background-color: rgb(242, 46, 11);
+    border-radius: 30px;
+}
+
+a.editar {
+    cursor: pointer;
+    padding: 5%;
+    background-color: dodgerblue;
+    border-radius: 30px;
 }

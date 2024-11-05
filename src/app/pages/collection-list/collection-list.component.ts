@@ -1,12 +1,35 @@
 import { Component } from '@angular/core';
+import { CollectionService } from '../../services/collection.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-collection-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './collection-list.component.html',
-  styleUrl: './collection-list.component.css'
+  styleUrl: './collection-list.component.css',
 })
 export class CollectionListComponent {
+  colecciones: any;
 
+  constructor(
+    private collectionService: CollectionService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.collectionService.getCollections().subscribe((data) => {
+      console.log(data);
+      this.colecciones = data.data;
+    });
+  }
+  editar (id:any){
+    console.log('editar',id)
+
+  }
+  eliminar (id: any){
+    console.log('eliminar',id)
+
+  }
 }

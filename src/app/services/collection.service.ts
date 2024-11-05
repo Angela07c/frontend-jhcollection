@@ -26,5 +26,9 @@ export class CollectionService {
        })
    );
 }
+
+  getCollections(){
+  return this.http.get<any>('http://localhost:3000/api/collection')
+}
 }
 

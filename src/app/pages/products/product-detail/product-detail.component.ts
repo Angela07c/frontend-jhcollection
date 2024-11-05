@@ -22,6 +22,10 @@ export class ProductDetailComponent {
     
   ) {}
 
+  get order(){
+    return this.cartService.currentOrder
+  }
+
   ngOnInit() {
     
     // this.productService.getProductById(['id']).subscribe((product) => {
@@ -36,6 +40,17 @@ export class ProductDetailComponent {
     // })
   }
 
+  addToCart(item: any){
+    this.cartService.addToCart(item)
+  }
+
+  addOneItem(id: any){
+    this.cartService.addOneItemToCart(id)
+  }
+
+  removeOneItem(id:any){
+    this.cartService.substractOneItemToCart(id)
+  }
 
   }
 

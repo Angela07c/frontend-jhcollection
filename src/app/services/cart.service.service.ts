@@ -12,16 +12,30 @@ export class CartService {
   private shoppingCart: any = [] ;
   private localStorageKey: any = 'cart'; 
   total : number = 0;
+  orderNumber: number = 0;
 
   constructor () {
     this.loadCartFromLocalStorage();
     this.totalPrice();
     console.log( this.shoppingCart );
+    console.log(this.orderNumber)
   }
 
   /** Getter */
   get items() {
     return this.shoppingCart;
+  }
+
+  get currentOrder(){
+    return this.orderNumber
+  }
+
+  getOrderByItemId(id: any){
+     // Buscar el producto en el carrito usando su id
+    const productFound = this.shoppingCart.find((productItem: any) => 
+      productItem.info._id === id
+    );
+    this.orderNumber = productFound?.order || 0 
   }
 
   addToCart(product: Product) {
@@ -72,6 +86,7 @@ export class CartService {
         if( item.order !== 0 && item.info.quantity ) {
           item.order += 1;
           item.total = item.info.price * item.order;
+          this.orderNumber = item.order
         }
       }
 
@@ -92,6 +107,7 @@ export class CartService {
         if( item.order !== 0 && item.info.quantity ) {
           item.order -= 1;
           item.total = item.info.price * item.order;
+          this.orderNumber = item.order
         }
       }
 
@@ -101,6 +117,7 @@ export class CartService {
       return item.order > 0;
     } );
 
+    
     this.saveCartToLocalStorage();
     this.totalPrice();
   }

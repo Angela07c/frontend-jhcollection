@@ -376,5 +376,13 @@ p {
 img.img.img-1 {
     width: 100%;
     object-fit: scale-down;
+    background-position-x: center;
+    background-position-y: center;
 }
+
+section.slider-wrapper {
+    height: 32rem;
+}
+
+   
 

@@ -16,7 +16,7 @@
                 <!-- Validar los estados del campo input >> name -->
                 @if( formData.get( 'name' )?.invalid && ( formData.get( 'name' )?.dirty || formData.get( 'name' )?.touched ) ) {
                     @if( formData.get( 'name' )?.errors?.[ 'required' ] ) {
-                        <small>El campo 'name' es obligatorio</small>
+                        <small>El campo es obligatorio</small>
                     }
                 }
 
@@ -39,11 +39,11 @@
                 @if( formData.get( 'username' )?.invalid && ( formData.get( 'username' )?.dirty || formData.get( 'username' )?.touched ) ) {
                     <!-- Valida la regla: Validators.required -->
                     @if( formData.get( 'username' )?.errors?.[ 'required' ] ) {
-                        <small>El campo 'email' es obligatorio</small>
+                        <small>El campo es obligatorio</small>
                     }
                     <!-- Valida la regla: Validators.email -->
                     @if( formData.get( 'username' )?.errors?.[ 'email' ] ) {
-                        <small>Email con formato no valido</small>
+                        <small>Correo con formato no valido</small>
                     }
                 }
             </div>
@@ -60,15 +60,15 @@
                 @if( formData.get( 'password' )?.invalid && ( formData.get( 'password' )?.dirty || formData.get( 'password' )?.touched ) ) {
                     <!-- Valida la regla: Validators.required -->
                     @if( formData.get( 'password' )?.errors?.[ 'required' ] ) {
-                        <small>El campo 'password' es obligatorio</small>
+                        <small>El campo es obligatorio</small>
                     }
                     <!-- Valida la regla: Validators.min -->
                     @if( formData.get( 'password' )?.errors?.[ 'minlength' ] ) {
-                        <small>El password debe tener minimo 8 caracteres</small>
+                        <small>La contraseña debe tener minimo 8 caracteres</small>
                     }
                     <!-- Valida la regla: Validators.max -->
                     @if( formData.get( 'password' )?.errors?.[ 'maxlength' ] ) {
-                        <small>El password debe tener maximo 20 caracteres</small>
+                        <small>La contraseña debe tener maximo 20 caracteres</small>
                     }
                 }
             </div>

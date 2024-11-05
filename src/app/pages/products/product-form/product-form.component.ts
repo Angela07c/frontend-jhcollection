@@ -5,6 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ProductService } from '../../../services/product.service';
 import { Router, RouterLink } from '@angular/router'; // Asegúrate de tener esto importado
 import { CategoryService } from '../../../services/category.service';
+import { CollectionService } from '../../../services/collection.service';
 
 @Component({
   selector: 'app-product-form',
@@ -16,9 +17,9 @@ import { CategoryService } from '../../../services/category.service';
 export class ProductFormComponent {
   productForm!: FormGroup;
   categories: any[] = [];
-  collections: any [] = ['ColeccionV', 'ColeccionI', 'ColeccionP'];
+  collections: any [] = [];
   
-  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService) { // Inyección correcta del Router
+  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService,private collectionService: CollectionService) { // Inyección correcta del Router
     this.productForm = new FormGroup({
       name: new FormControl('', [ Validators.required ]),
       description: new FormControl(''),
@@ -45,6 +46,12 @@ export class ProductFormComponent {
   }
 
   ngOnInit(): void {
+    this.collectionService.getCollections().subscribe ((data)=>{
+      console.log(data)
+      this.collections = data.data
+      
+    });
+
     this.categoryService.getCategory().subscribe((data) => {
       console.log(data)
       this.categories = data.data;

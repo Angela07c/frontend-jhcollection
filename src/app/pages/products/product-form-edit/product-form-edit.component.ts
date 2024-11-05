@@ -4,6 +4,7 @@ import { ProductService } from '../../../services/product.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CategoryService } from '../../../services/category.service';
 import { CommonModule } from '@angular/common';
+import { CollectionService } from '../../../services/collection.service';
 
 @Component({
   selector: 'app-product-form-edit',
@@ -15,11 +16,11 @@ import { CommonModule } from '@angular/common';
 export class ProductFormEditComponent {
   productForm!: FormGroup;
   categories: any[] = [];
-  collections: any [] = ['ColeccionV', 'ColeccionI', 'ColeccionP'];
+  collections: any [] = [];
   idselection: any;
 
   
-  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService, 
+  constructor(private productService: ProductService, private router: Router, private categoryService: CategoryService, private collectionService: CollectionService,
     private activatedRoute: ActivatedRoute ) { // Inyección correcta del Router
     this.productForm = new FormGroup({
       name: new FormControl('', [ Validators.required ]),
@@ -28,7 +29,8 @@ export class ProductFormEditComponent {
       quantity: new FormControl(1, [ Validators.required, Validators.min(1) ]),
       category: new FormControl('non-category', [ Validators.required ]),
       collection: new FormControl ('', [Validators.required]),
-      urlImage: new FormControl('')
+      urlImage: new FormControl(''),
+      prominent: new FormControl (false)
     });
   }
 
@@ -49,6 +51,11 @@ export class ProductFormEditComponent {
   }
 
   ngOnInit(): void {
+    this.collectionService.getCollections().subscribe ((data)=>{
+      console.log(data)
+      this.collections= data.data
+
+    })
     this.categoryService.getCategory().subscribe((data) => {
       console.log(data)
       this.categories = data.data;
@@ -68,6 +75,7 @@ export class ProductFormEditComponent {
             category: data.data.category,
             collection: data.data.collection,
             urlImage: data.data.urlImage,
+            prominent: data.data.prominent
           });
         });
       })

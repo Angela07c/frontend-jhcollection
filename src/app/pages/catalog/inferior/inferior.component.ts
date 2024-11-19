@@ -26,7 +26,7 @@ export class InferiorComponent {
   }
 
   filtrarPorCategoria( category: string): void {
-    if (category === "todos"){
+    if (category === "672a74f070de006914b61ca1"){
       this.filteredProducts = [...this.products];
     } else {
       this.filteredProducts = this.products.filter(product => product.category === category);

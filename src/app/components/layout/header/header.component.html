@@ -7,7 +7,7 @@
                 <li>
                     <a routerLink="product/catalogo">Catálogo</a>
                     <ul class="dropdown-menu">
-                        <li><a (click)="filtrarPorCategoria('camisetas')" [routerLink]="['camisetas']" routerLinkActive="Active">Camisetas</a></li>
+                        <li><a [routerLink]="['camisetas']" routerLinkActive="Active">Camisetas</a></li>
                         <li><a (click)="filtrarPorCategoria('buzos')" [routerLink]="['buzos']" routerLinkActive="Active">Buzos y chaquetas</a></li>
                         <li><a (click)="filtrarPorCategoria('inferior')" [routerLink]="['inferior']" routerLinkActive="Active">Inferior</a></li>
                         <li><a (click)="filtrarPorCategoria('accesorios')" [routerLink]="['accesorios']" routerLinkActive="Active">Accesorios</a></li>

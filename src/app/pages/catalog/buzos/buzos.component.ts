@@ -4,11 +4,12 @@ import { Product } from '../../../interfaces/product';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
 import { CartService } from '../../../services/cart.service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-buzos',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, HomeComponent],
+  imports: [RouterLink, RouterLinkActive, HomeComponent, CommonModule],
   templateUrl: './buzos.component.html',
   styleUrl: './buzos.component.css'
 })

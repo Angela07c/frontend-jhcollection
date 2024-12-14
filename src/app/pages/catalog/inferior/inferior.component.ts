@@ -3,11 +3,12 @@ import { Product } from '../../../interfaces/product';
 import { ProductService } from '../../../services/product.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-inferior',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, HomeComponent],
+  imports: [RouterLink, RouterLinkActive, HomeComponent, CommonModule],
   templateUrl: './inferior.component.html',
   styleUrl: './inferior.component.css'
 })
